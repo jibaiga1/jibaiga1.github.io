@@ -76,7 +76,7 @@ ul{
         width: auto;
         margin: 2em auto;
         padding: 60px;
-        background-color: #3d5955;
+        background-color: #8FA795;
         border-top-left-radius: 2em 2em;
         text-align:justify;
     }
@@ -87,7 +87,7 @@ ul{
         padding: 7px 10px 10px 50px;
         width:105px;
         height:50px;
-        background-color: #406661;
+        background-color: #8FA795;
         border-bottom-right-radius:2em 2em;
         transition: border-bottom-right-radius 1s linear 0.2s;
         z-index:5;
@@ -99,7 +99,7 @@ ul{
         left:0px;
         padding: 0px 10px 10px 50px;
         width:105px;
-        background-color:#406661;
+        background-color: #8FA795;
         border-bottom-right-radius:2em 2em;
         z-index: 3;
        /* opacity:0;
