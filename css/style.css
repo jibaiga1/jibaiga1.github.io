@@ -94,7 +94,6 @@ ul{
     #menu{
         position:fixed;
         top:42px;
-        transition: top 1.5s linear;
         left:0px;
         padding: 0px 10px 10px 10px;
         width:70px;
@@ -106,10 +105,6 @@ ul{
     }
     #name:hover {
         border-bottom-right-radius:0;
-    }
-    header:hover > #menu{
-        top:42px;
-        /*opacity:1;*/
     }
     #gao {
         margin-right:0px;
