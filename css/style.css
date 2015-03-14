@@ -1,0 +1,187 @@
+@font-face {
+    font-family: WTLI;
+    src: url('./wt021.ttf');
+}
+
+body {
+    background-color: #D4EAD4;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: 100% 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family:"文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","微軟正黑體","Microsoft JhengHei",sans-serif;
+    color: #f3e9b9;
+    letter-spacing: 0.03em;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+ul{
+    list-style-type:none;
+}
+
+@media screen and (min-width: 1024px){
+    #contentArea {
+        width: 700px;
+        margin: 5em auto;
+        padding: 20px 200px 10px 100px;
+        background-color: #8FA79B;
+        border-top-left-radius: 2em 2em;
+        position: absolute; 
+        right : 0px;
+    }
+
+    #name {
+        position:fixed;
+        top:0px;
+        left:0px;
+        padding: 7px 10px 10px 50px;
+        width:105px;
+        height:50px;
+        background-color: #8FA79B;
+        border-bottom-right-radius:2em 2em;
+        transition: border-bottom-right-radius 1s linear 0.2s;
+        z-index:5;
+    }
+
+    #menu{
+        position:fixed;
+        top:-542px;
+        transition: top 1.5s linear;
+        left:0px;
+        padding: 0px 10px 10px 50px;
+        width:105px;
+        background-color:#8FA79B;
+        border-bottom-right-radius:2em 2em;
+        z-index: 3;
+       /* opacity:0;
+        transition: opacity 1s ease-in-out 0.3s;*/
+    }
+
+    #name:hover {
+        border-bottom-right-radius:0;
+    }
+
+    header:hover > #menu{
+        top:42px;
+        /*opacity:1;*/
+    }
+}
+
+@media screen and (max-width: 1024px){
+    #contentArea {
+        width: auto;
+        margin: 2em auto;
+        padding: 60px;
+        background-color: #3d5955;
+        border-top-left-radius: 2em 2em;
+        text-align:justify;
+    }
+    #name {
+        position:fixed;
+        top:0px;
+        left:0px;
+        padding: 7px 10px 10px 50px;
+        width:105px;
+        height:50px;
+        background-color: #406661;
+        border-bottom-right-radius:2em 2em;
+        transition: border-bottom-right-radius 1s linear 0.2s;
+        z-index:5;
+    }
+    #menu{
+        position:fixed;
+        top:-542px;
+        transition: top 1.5s linear;
+        left:0px;
+        padding: 0px 10px 10px 50px;
+        width:105px;
+        background-color:#406661;
+        border-bottom-right-radius:2em 2em;
+        z-index: 3;
+       /* opacity:0;
+        transition: opacity 1s ease-in-out 0.3s;*/
+    }
+    #name:hover {
+        border-bottom-right-radius:0;
+    }
+    header:hover > #menu{
+        top:42px;
+        /*opacity:1;*/
+    }
+    #gao {
+        margin-right:0px;
+    }
+}
+
+th,tr,td {
+    border:solid 1px;
+    text-align:left;
+    padding-left:4px;
+    padding-right:10px;
+    font-family:"文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","微軟正黑體","Microsoft JhengHei",sans-serif;
+    color: #001f00 ;
+    font-weight: normal;
+}
+
+table {
+    margin:1em 0em 0em 5em;
+}
+
+h1  {
+    font-family:"文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","微軟正黑體","Microsoft JhengHei",sans-serif;
+    color: #001f00;
+    font-weight:normal;
+}
+
+h2, h3, h4 {
+    font-family: WTLI,"UMing", "SimSun";
+    color: #001f00;
+    font-weight: normal;
+}
+
+a:link, a:visited {
+    color: #330000;
+    text-decoration: none;
+}
+a:hover{
+    color: #801a00;
+}
+
+.tab{
+    margin-left:30px;
+    font-size: 0.8em;
+}
+
+
+#menu input {
+    position:absolut;
+    left:0;
+    margin-left:0;
+    opacity:0;
+    cursor:pointer;
+    height:1em;
+    width:1em;
+    top:0;
+    display:inline;
+    float:right;
+}
+
+#menu input + ul > li {
+    display:none;
+}
+
+#menu input:checked + ul > li {
+    display:block;
+} 
+
+label {
+    color: #330000;
+}
+
+label:hover {
+    color: #801a00;
+}
+

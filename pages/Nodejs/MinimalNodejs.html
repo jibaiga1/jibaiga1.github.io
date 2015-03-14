@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nodejs建立最小化部落格框架</title>
+</head>
+<body>
+    模組化
+        
+        網路上可以找到很多方法，這邊就試著統一用一種方法吧,以下建立http server模組：
+        <code>
+        //先引入其它模組
+        var http = require('http')
+        //定義此模組名稱，並令其執行某匿名函數
+        var startserver = function(){
+            //此函數執行之內容：
+            http.createServer(function(request, response){
+            response.writeHead(200,null)
+            response.end()
+            console.log('hi')
+            }).listen(8888)
+            }
+        
+            //輸出模組
+            module.exorts.myserver=myserver()
+
+        </code>    
+    建立http Server服務 
+        
+
+    連接DB(使用MongoDB) 
+    
+</body>
+</html>

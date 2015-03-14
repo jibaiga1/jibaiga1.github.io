@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Debian Minimaliste Journy 大變極簡旅程</title>
+				<link rel="stylesheet" href="style.css">
+</head>
+<body>
+				<div>
+				        <p><h3>預備</h3>
+												下載大變安裝iso檔：http:www.debian.org/CD/netinst/，
+然後燒成可開機usb安裝碟 <br>
+<br>
+												依照不同電腦硬體需求下載驅動程式deb檔，可以先存在usb安裝碟裡，在安裝過程要求"網路設定"的時候讓大變自已到外接裝置去找驅動。 <br>
+                       【thinkpad T43 需要網卡驅動：ipw2200】 <br>
+
+											 【thinkpad T60 需要網卡驅動: ThinkPad 11a/b/g Wireless LAN Mini Express Adapter <br>
+ath5k <br>
+Chipset: Atheros AR5006EX (as printed on card AR5BXB6 or AR5212)】 <br>
+<br>
+
+安裝過程不再綴述，大概就是一直下一步、下一步、下一步……這樣，裝好之後只有大變基本系統，也還沒有圖型化桌面，如果不太熟悉Linux命令列基本指令的話可能會動彈不得。(至少要知道一些像是cd, ls, mkdir, mv, rm...之類的指令吧!)。
+								</p>
+				</div>
+				<div>
+				        <p>
+				                <h3>第一步 連上網路</h3>
+												(此設定僅限無線網路連接，有線網路設定不同) <br>
+
+												用iwconfig先看看電腦上無線網路裝置是那一個: <br>
+                        <code>iwconfig</code> <br>
+												
+												例如猴仔電腦的無線網路介面是eth1，就用下列指令掃描無線網路的essid： <br>
+                        <code>iwconfig eth1 scanning</code> <br>
+
+												設定好想要連接的essid(假設為YOURESSID)： <br>
+                        <code>iwconfig eth1 essid YOURESSID</code> <br>
+
+												然後用DHCP連上無線網路： <br>
+
+												<code>dhclient</code> <br>
+                        因為猴仔用的無線網路連線之後還要從網頁登入，所以努力找到一張n年前燒好的大變DVD，插上外接DVD-ROM，先把DVD加到軟體庫裡面： <br>
+                        <code>apt-cdrom add</code> <br>
+
+                        然後裝上w3m(一個古早時代的文字介面瀏覽器) <br>
+                        <code>apt-get install w3m</code> <br>
+
+				        </p>
+								<p>
+								        <h3>第貳步 更新軟體庫</h3>
+												先在/etc/apt/sources.list裡加上debian軟體庫連結： <br>
+												deb http://ftp.XX.debian.org/debian squeeze main <br>
+                        (XX是國家縮寫如：fr, tw, de...) <br>
+												<br>
+                        安裝netselect-apt (用來選擇比較快的鏡像站) <br>
+
+								</p>
+								<p>
+								        <h3>第三步 桌面與字體</h3>
+                        <h4>裝xorg以及福祿寶</h4> <br>
+                        <code>apt-get install xorg fluxbox fluxconf</code> <br>
+                        裝fontconfig <br>
+                        <br>
+                        <h4>裝中文字體 cwheib.deb</h4> <br>
+                        http://jonny.ubuntu-tw.net/2008/03/fontscwtex-ttf.html <br>
+                        fc-cache -v <br>
+                        <br>
+                        <h4>設定桌面背景並且讓福祿寶自動記住</h4> <br>
+                        先安裝Eterm <br>
+                        <code>apt-get install eterm</code> <br>
+                        <code>fbsetbg -f "完整圖檔路徑"</code>
+												<br>
+												然後在~/.fluxbox資料夾裡找到startup檔加入fbsetbg -l
+												<br>
+												/.fluxbox/init也加上session.screen0.rootCommand:fbsetbg -l
+												<br>
+												就ok啦!
+												<br>
+												記得再下一次指令：
+												<br>
+												<code>fbsetbg "完整圖檔路徑"</code>
+												<br>
+											  安裝 pcmanfm
+												<br>
+                        <br>
+                        <h4>加入fbpanel</h4>
+												<br>
+												fluxbox內建的toolbar實在是太陽春了，請找來fbpanel做為軟體啟動的捷徑列
+												<br>
+												安裝好後，修改設定文件：
+												<br>
+												~/.fbpanel/defult
+
+												
+
+								</p>
+				</div>
+				<div>
+								<p>
+								        <h3>其它</h3>
+												<h4>裝firefox</h4>
+												<br>
+												Debian裡面那個冰老鼠實在是用不太習慣，所以還是跑去Ubuntu的Mozila Daily Build PPA找來了火葫助陣，找一個古老的Ubuntu發行版來源，加到sources.list裡就ok啦!
+												<br>
+												<code>
+												#ubuntu mozila ppa daily
+												<br>
+												deb http://ppa.launchpad.net/ubuntu-mozilla-daily/ppa/ubuntu hardy main
+												<br>
+												deb-src http://ppa.launchpad.net/ubuntu-mozilla-daily/ppa/ubuntu hardy main
+												<br>
+												</code>
+
+												<br>
+												<h4>裝google chrome</h4>
+												<br>
+												加入股溝克龍母的來源：
+												<br>
+												<code>
+												deb http://ppa.launchpad.net/chromium-daily/ppa/ubuntu UBUNTU_VERSION main
+												<br>
+												deb-src http://ppa.launchpad.net/chromium-daily/ppa/ubuntu UBUNTU_VERSION main
+												<br>
+												
+												</code>
+												下載、匯入認證金鑰並安裝克龍母：
+												<br>
+												<code>
+												apt-get update
+												
+												<br>
+												apt-get install chromium-browser
+												<br>
+												</code>
+												<h4>裝Virtualbox</h4>
+												<br>
+												同樣加入來源
+												<br>
+												<code>
+												#Virtualbox
+												<br>
+												deb http://download.virtualbox.org/virtualbox/debian lenny non-free
+												</code>
+												<br>
+												匯入金鑰：
+												<br>
+												<code>
+												apt-key add sun_vbox.asc
+												</code>
+												<br>
+												安裝
+												<br>
+												<code>
+												apt-get install virtualbox-3.1
+                        </code>
+
+								</p>
+				</div>
+				<div>
+				        <p>
+				                <h3>2014更新</h3>
+												2014年了!!都事過境遷了……
+												<br>
+												現在要不.iso檔裝到usb裡，只要：
+												<br>
+												<code>
+												cp debian-xxx.iso /dev/sdX
+												<br>
+												sync
+												<br>
+												</code>
+												打完收工!!! 也太誇張……
+												<br>
+												<br>
+												
+
+												firmware安裝
+												<br>
+												<code>
+												dpkg -i firmware-linux-nonfree_0.36+wheezy.1_all.deb
+												</code>
+
+				        </p>
+				</div>
+
+
+</body>
+</html>

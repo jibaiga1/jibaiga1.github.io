@@ -1,0 +1,85 @@
+@font-face {
+				font-family: WTLI;
+				src: url('wt021.ttf');
+}
+
+body {
+				background-color: #C7EDCC;
+				background-image: url('rice.jpg');
+				background-repeat: no-repeat;
+				background-attachment:fixed;
+				background-size: 100% 100%;
+				margin: 0px;
+				padding: 0px;
+				font-family:"文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","微軟正黑體","Microsoft JhengHei",sans-serif;
+				color: #f3e9b9;
+				letter-spacing: 0.035em;
+				font-size: 1.2em;
+				line-height: 1.6;
+
+}
+
+@media screen and (min-width: 800px){
+	div {
+				width: 800px;
+				margin: 1em auto;
+				padding: 50px;
+				background-color: #3d5955;
+				border-top-left-radius: 2em 2em;
+	}
+	
+	header {
+				padding: 0px 50px;
+				width:1025px;
+				background-color: #406661;
+	}
+}
+
+@media screen and (max-width: 799px){
+	div {
+				width: auto;				
+				margin: 1em auto;
+				padding: 50px;
+				background-color: #3d5955;
+				border-top-left-radius: 2em 2em;
+	}
+	
+	header {
+				padding: 0px 50px;
+				width:auto;
+				background-color: #406661;
+	}
+}
+
+
+th,tr {
+				border:solid 1px;
+				text-align:left;
+				padding-left:4px;
+				padding-right:10px;
+				font-family:WTLI, "UMing", "SimSun";
+				color: #ffba8e;
+				font-weight: normal;
+}
+
+table {
+				margin:1em 0em 0em 5em;
+
+}
+
+
+h1, h2, h3, h4 {
+				font-family: WTLI,"UMing", "SimSun";
+				color: #dec03b;
+				font-weight: normal;
+}
+
+
+a:link, a:visited {
+				color: #f3e9b9;
+}
+
+code {
+				border:1px;
+				background-color:grey;
+}

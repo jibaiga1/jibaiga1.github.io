@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>第四章 秣馬厲兵</title>
+    </head>
+    <body>
+        <div id="forth">
+        <h2>第四章 秣馬厲兵</h2> 
+            基本功能熟悉之後，讓Vim成為有"個人風格"的編輯器才能把它強大功能發揮到極致!
+            自已寫一個Vimrc是一個起點
+        <h2>個人化vimrc v.s. 全局vimrc, 它們分別在那?</h2>
+            個人化vimrc通常會存在/home/username/.vimrc
+            全局vimrc則存在 /etc/vim/vimrc (在Ubuntu中是如此，其它作業系統我還不清楚!)
+            :edit ~/.vimrc on linux
+            :edit $VIM/_vimrc on windows
+            vimrc_example.vim
+
+        <h2>vimrc語法</h2>
+            set 設定某功能
+            set (no)nu (不)顯示行號
+            set (no)hlsearch (不)顯示搜尋字串反白
+            syntax on/off 開啟/關閉語法著色
+            看看別人怎麼設定的：
+            https://github.com/mscoutermarsh/dotfiles
+            https://github.com/thoughtbot/dotfiles
+            https://github.com/imkmf/dotfiles
+
+
+
+        <h2>第三節 Vim的人生是彩色的</h2>
+            打造合用的Vim不只是利用.vimrc來設定功能，色彩的配置(colorscheme)也是重要的一部分，猴仔仔我比較喜歡一切從簡，:
+
+            怎樣配置色彩呢?下面為各位媚娓娓道來……
+        <h3>預設色彩配置</h3>
+            在Vim中已經有好幾個預設的色彩配置方案可以選擇，只要在命令模式輸入:colorsheme (或簡稱colors)，加上一個空格，就可以用Tab鍵選擇想要的色彩配置，
+            <table>
+                <tr>
+                    <th>:colors</th>
+                    <th>顯示目前使用的色彩配置名稱</th>
+                </tr>
+                <tr>
+                    <th>:colors + Space + colorschemeName</th>
+                    <th>將色彩配置設定為colorschemeName</th>
+                </tr>
+                <tr>
+                    <th>:colors + Space + Tab</th>
+                    <th>選擇現存色彩配置裡的其中一個</th>
+                </tr>
+            </table>
+
+        <h3>環境配置</h3>
+            Vim的色彩配置是由一個單獨的色彩配置檔完成，這個檔案會被放在 ~/.vim/colors/資料夾中(正常情況下你的系統裡不會有這個資料夾，請自已新增資料夾!)
+
+            建立mycolor.vim檔案
+            在.vimrc檔中加入
+            colo munkeecolor
+            set t_Co=256 "設定顏色為256色"
+
+</div>
+</body>
+</html>

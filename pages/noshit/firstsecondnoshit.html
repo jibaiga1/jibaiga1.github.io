@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>第一章 破門而入 力圖生還</title>
+</head>
+<body>
+		<div id="firstsecondnoshit">
+				<h2>第一章 破門而入 力圖生還</h2>
+						<h3>第一節 模式</h3>
+								Vim共有12種模式，基本模式三種：
+						<ol>
+								<li>
+								一般模式(Normal mode)：Vim預設模式。
+								</li>
+								<li>
+								插入模式(Insert mode)：Vim中輸入文字的模式。<br>
+								</li>
+								<li>
+								命令模式(Command-line mode):輸入指令模式。
+								</li>
+						</ol>
+
+						<h3>第二節 「插入模式」與「一般模式」</h3>
+						進入Vim時身處「一般模式」中不能輸入文字，進入「插入模式」才能輸入文字：
+						<table>
+										<tr>
+														<th>i</th>
+														<th>進入插入(insert)模式</th>
+										</tr>
+						</table>
+						<br>
+					  輸入結束時要退出插入模式：	
+						<table>
+										<tr>
+														<th>[Esc]</th>
+														<th>退出插入模式</th>
+										</tr>
+						</table>
+						<p class="tab">
+						更節約手掌運動的方式：		
+						</p>
+						<table>
+										<tr>
+														<th>Ctrl + c</th>
+														<th>退出</th>
+										</tr>
+						</table>
+						<p class="tab">
+										靈感來源：<a href="https://www.youtube.com/watch?v=_NUO4JEtkDw">Learning Vim in a Week</a><br>
+
+            </p>
+						<h3>第三節 慢步"一般模式"</h3>
+						在Vim中，hjkl被用來取代方向鍵…<br>
+						<table>
+										<tr>
+														<th>左</th>
+														<th>h</th>
+										</tr>
+										<tr>
+														<th>下</th>
+														<th>j</th>
+										</tr>
+										<tr>
+														<th>上</th>
+														<th>k</th>
+										</tr>
+
+										<tr>
+														<th>右</th>
+														<th>l</th>
+										</tr>
+						</table>
+						<br>
+						<h3>第四節 進入"命令模式"</h3>
+						進入"命令模式"~~
+						<table>
+										<tr>
+														<th>:</th>
+														<th>進入命令模式</th>
+										</tr>
+						</table>
+						<br>
+						離開Vim
+						<table>
+										<tr>
+														<th>:q</th>
+														<th>退出(quit)</th>
+										</tr>
+						</table>
+						存檔
+						<table>
+										<tr>
+														<th>:w</th>
+														<th>寫入/存檔(write)</th>
+										</tr>
+						</table>
+
+						強制命令
+						<table>
+										<tr>
+														<th>!</th>
+														<th>強制命令</th>
+										</tr>
+						</table>
+						強制命令可在任意指令後加入，例如：
+						<table>
+										<tr>
+														<th>:q!</th>
+														<th>強制退出</th>
+										</tr>
+										<tr>
+														<th>:wq!</th>
+														<th>強制存檔並退出</th>
+										</tr>
+						</table>
+						<h2>第五節 恭喜您!右腳小指已伸入Vim大門!</h2>
+								復習一下這隻小指能做些什麼偉大的事情:
+
+						<table>
+										<tr>
+														<th>i</th>
+														<th>進入插入(insert)模式</th>
+										</tr>
+										<tr>
+														<th>Esc鍵</th>
+														<th>退出插入模式</th>
+										</tr>
+										<tr>
+														<th>h</th>
+														<th>左</th>
+										</tr>
+										<tr>
+														<th>j</th>
+														<th>下</th>
+										</tr>
+										<tr>
+														<th>k</th>
+														<th>上</th>
+										</tr>
+										<tr>
+														<th>l</th>
+														<th>右</th>
+										</tr>
+										<tr>
+														<th>:</th>
+														<th>進入命令模式</th>
+										</tr>
+										<tr>
+														<th>:q</th>
+														<th>退出(quit)</th>
+										</tr>
+										<tr>
+														<th>:w</th>
+														<th>寫入/存檔(write)</th>
+										</tr>
+										<tr>
+														<th>!</th>
+														<th>強制命令</th>
+										</tr>
+						</table>
+
+
+									 <h2>第二章 九條好漢在「一般」</h2>
+			<h3>第一節 動如脫免</h3>
+			少用hjkl龜速蠕動，多用其它移動指令：
+			<br>
+			從一個字元進步到一個單字：
+												<table>
+												        <tr>
+												                <th>w</th>
+																				<th>向前/右移動一個單字</th>
+												        </tr>
+												        <tr>
+												                <th>b</th>
+																				<th>向後/左移動一個單字</th>
+												        </tr>
+												</table>
+                        <br>
+
+												從一個單字進步到一行：
+												<table>
+												        <tr>
+												                <th>0</th>
+																				<th>移動到游標所在行行首</th>
+												        </tr>
+												        <tr>
+												                <th>$</th>
+																				<th>移動到游標所在行行尾</th>
+												        </tr>
+												</table>
+
+
+
+												在目前頁面中移動：
+												<table>
+																<tr>
+																				<th>H</th>
+																				<th>移至本頁首行</th>
+																</tr>
+																<tr>
+																				<th>M</th>
+																				<th>移至本頁中間行</th>
+																</tr>
+																<tr>
+																				<th>L</th>
+																				<th>移至本頁最末行</th>
+																</tr>
+												</table>
+												換頁:
+												<table>
+												        <tr>
+												                <th>Ctrl + F</th>
+																				<th>下一頁</th>
+												        </tr>
+												        <tr>
+												                <th>Ctrl + B</th>
+																				<th>下一頁</th>
+												        </tr>
+												</table>
+												換半頁：
+												<table>
+												        <tr>
+												                <th>Ctrl + D</th>
+																				<th>往下半頁</th>
+												        </tr>
+												        <tr>
+												                <th>Ctrl + U</th>
+																				<th>往上半頁</th>
+												        </tr>
+												</table>
+                        
+												<h3>第二節 編輯</h3>
+												<p>
+												怎麼在一般模式中編修文件。 
+												</p>
+												剪下、複製、貼上
+												d y p
+
+
+												<table>
+																<tr>
+																				<th>x</th>
+																				<th>剪下當前光標上之字符</th>
+
+																</tr>
+																<tr>
+																				<th>dw</th>
+																				<th>從光標處剪下至一個單字的結尾(Delet word)</th>
+																</tr>
+
+																<tr>
+																				<th>"d$"</th>
+																				<th>從光標處刪至行末</th>
+																</tr>
+												</table>
+
+												"u" 復原
+												"ctrl+r" 取消復原 
+
+												<h3>第三節 插入的七加一種方法</h3>
+															除i指令之外，從一般模式進入插入模式之「五虎將」：<br>
+												<table>
+													      <tr>
+																				<th>I</th>
+																				<th>從行首第一個非空白字元處開始輸入</th>
+																</tr>
+																<tr>
+																				<th>a</th>
+																				<th>從所在字元後開始輸入(append)</th>
+																</tr>
+																<tr>
+																				<th>A</th>
+																				<th>從所在行尾開始輸入</th>
+																</tr>
+																<tr>
+																				<th>o</th>
+																				<th>在此行下方開啟新行並開始輸入(open)</th>
+																</tr>
+																<tr>
+																				<th>O</th>
+																				<th>在此行上方開啟新行並開始輸入</th>
+																</tr>
+												</table>
+		</div>  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn SASS</title>
+</head>
+<body>
+   sass installation:
+    need to install Ruby first and then <code>gem install sass</code>
+    
+    sass first comand:<br>
+    <code> sass-convert </code>
+    ex:
+    <code>sass-convert sasstest.css sasstest.sass</code>
+    or<br>
+    <code>sass convert sasstest scss sasstest.sass</code>
+    
+    make a css file
+    <code>sass sasstest.scss:sasstest.css</code>
+
+    make a scss file watched and automaticly update the css file by editing scss file
+    <code>sass --watch sasst.scss:sasst.css</code>
+    
+    it can also  watch a whole dir<br>
+    <code>sass --watch Dir:CSS</code>
+     watch Dir and generate css files to CSS folder
+     <br>
+     can chose from different styl by doing 
+     <code>sass xxx.scss:xxx.css --style compact</code>
+     obviosly, convert it in a compact fashion.
+     another style "compress" is going to generat the smalest css file without any white space.
+     "expanded" format it into a "traditional" css file style
+     <br>
+     to not haveing it generate a map file automaticly, we can add <code>--sourcemap=none</code>
+     at the end of the command
+     <br>
+     all these elements can be add up in a single command
+     <br>
+     ex:
+     sass --watch Dir:CSS --style compact --sourcesmap=nonek;
+</body>
+</html>

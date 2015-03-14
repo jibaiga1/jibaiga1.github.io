@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nodejs哈囉世界!</title>
+</head>
+<body>
+    <code>
+        var http = require('http')
+            // Make a "http" var and require the Node.js http library whitch allows us to creat an http server.
+
+        var server = http.createServer(function(request,response){
+            //create a server object, and call the 'createServer' function.
+            //It takes an anonymos fuction as it's parameter, and fill in request and response object. 
+            //Inside the anonymus function we include our code to handle our website, or call other function to handle it.
+
+            response.writeHead(200,{'content-Type':'text/html'});
+                //this function can only be called once.
+                //http status 200 = OK, and load content
+
+            response.end('<h1>Hello世界!</h1>');
+            console.log('Handled request');
+        });
+
+        server.listen(8080,'localhost');
+
+        console.log('Server running at port 8080');
+    </code>
+    
+    <p>
+        Get to create the Package.json file. 
+        Do it by cd to website root folder, run <code>npm init</code>
+        along the initialization, setup project name, version, description, 
+        entry point(will need to create a new "index.js" file in the project root dir), and the author.
+        edit the package.json file, add dependencies by adding these lines:
+    </p>
+    <code>
+        "dependencies"
+    </code>
+    
+    <p>
+        上面只是其中一種方法，網路上還可以找到好幾種，下面找出另外兩個做做比較：
+        <a href="http://www.cnblogs.com/zsk526/p/4170645.html">Nodejs 创建web服务</a>
+            <code>
+                // 加载http服务包
+                var http = require("http");
+
+                // 创建服务
+                var server = http.createServer(requestListener);
+
+                // 监听端口
+                server.listen(7798);
+
+                // 请求监听处理方法
+                function requestListener (req, res) {
+                    console.info(req.url); // 控制台输出信息
+                    res.write("www.xmczzs.com"); // web请求的源代码
+                    res.end(); // 请求结束
+                }
+            </code>
+    </p>
+            
+
+    
+</body>
+</html>
