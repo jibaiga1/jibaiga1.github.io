@@ -93,7 +93,7 @@ ul{
     }
     #menu{
         position:fixed;
-        top:-542px;
+        top:42px;
         transition: top 1.5s linear;
         left:0px;
         padding: 0px 10px 10px 10px;
